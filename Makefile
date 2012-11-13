@@ -13,10 +13,10 @@ index.html : $(mp4s) $(webms) web.sh
 	./web.sh > index.html
 
 %.mp4 : %.d
-	$(FFMPEG) -i $</%05d.jpg -sameq -vcodec libx264 $@
+	$(FFMPEG) -i $</%05d.jpg -vcodec libx264 $@
 
 %.webm : %.d
-	$(FFMPEG) -i $</%05d.jpg -sameq -vcodec libvpx $@
+	$(FFMPEG) -i $</%05d.jpg -vcodec libvpx $@
 
 .PHONY : clean
 

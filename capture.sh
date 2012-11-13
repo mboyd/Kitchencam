@@ -16,7 +16,7 @@ fi
 FILENAME=${DATEFOLDER}/"$(printf %05d $FILENUM).jpg"
 
 mkdir -p "$DATEFOLDER"
-fswebcam -q -r 1280x720 "$FILENAME" > /dev/null
+fswebcam -q -r 1280x720 "$FILENAME" > /dev/null 2>&1
 
 # Compare with the last capture and delete if close enough
 if [ "$LASTNUM" ] ; then
@@ -33,3 +33,6 @@ fi
 #if [ -f "$FILENAME" ] ; then
 #	convert ${FILENAME} -font Helvetica -annotate 0 "$(date)" ${FILENAME}
 #fi
+
+# Sync data to media1e (hack)
+rsync -pr *.d firsteast@media1e.mit.edu:/srv/www/kitchencam/

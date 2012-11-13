@@ -42,7 +42,7 @@ cat <<HEAD_END
 	}
 	</style>
 
-	<title>1E KitchenCam v1.0</title>
+	<title>1E KitchenCam v2.0</title>
 </head>
 <body>
 	<h1>Kitchencam</h1>
