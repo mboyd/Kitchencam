@@ -1,5 +1,5 @@
 # Update a static webpage and timelapse mp4/webm videos
-# from *.ds containing webcam images
+# from *.d containing webcam images
 
 dirs := $(wildcard *.d)
 mp4s := $(patsubst %.d,%.mp4,$(dirs))

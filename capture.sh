@@ -16,7 +16,7 @@ fi
 FILENAME=${DATEFOLDER}/"$(printf %05d $FILENUM).jpg"
 
 mkdir -p "$DATEFOLDER"
-imagesnap -q -d "Logitech Camera" "$FILENAME"
+fswebcam -q -r 1280x720 "$FILENAME" > /dev/null
 
 # Compare with the last capture and delete if close enough
 if [ "$LASTNUM" ] ; then

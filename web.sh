@@ -21,6 +21,12 @@ cat <<HEAD_END
 		margin: 20px 0;
 	}
 
+	div.date_vid div.vid_header {
+		position: relative;
+		left: -30px;
+		margin: 10px 0;
+	}
+
 	div.date_vid video {
 		margin: auto;
 	}
@@ -45,7 +51,7 @@ HEAD_END
 for date in $(ls *.mp4 | cut -d. -f1 | sort -r) ; do 
 	cat <<DATE_END
 	<div id="$date" class="date_vid">
-		$date <br />
+		<div class="vid_header">$date</div>
 		<video controls width=600>
 			<source src="$date.mp4" type="video/mp4">
 			<source src="$date.webm" type="video/webm">
@@ -58,7 +64,7 @@ cat <<TAIL_END
 	<div id="footer">
 		<pre class="dinosuar">$(fortune | cowsay -W 80 -f stegosaurus)</pre>
 		Kitchencam v2.0 by <a href="mailto:mboyd@mit.edu">Merritt Boyd</a> <br/>
-		Late updated $(date)
+		Last updated $(date)
 	</div>
 
 </body>
